@@ -1,0 +1,1996 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zui_inflation_sb_001/$metadata">
+        <edmx:Include Namespace="ZUI_INFLATION_SB_001" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zui_inflation_sb_001_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zinflation_services_expose.IndexOranlariType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.IndexOranlariType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.IndexOranlariType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="İndex Oranları Giriş Ekranı"/>
+                            <PropertyValue Property="ID" String="RateType"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Index"/>
+                        <PropertyValue Property="TypeNamePlural" String="Index Oranları"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Index Oran"/>
+                                <PropertyValue Property="Value" Path="RateType"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Oran Türü"/>
+                            <PropertyValue Property="Value" Path="RateType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BankRate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Budat"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Oran Türü"/>
+                            <PropertyValue Property="Value" Path="RateType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Budat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BankRate"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>RateType</PropertyPath>
+                        <PropertyPath>BankRate</PropertyPath>
+                        <PropertyPath>Budat</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DegerlenecekHesaplarType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DegerlenecekHesaplarType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DegerlenecekHesaplarType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Değerlenecek Hesaplar Giriş Ekranı"/>
+                            <PropertyValue Property="ID" String="HesapEntry"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Hesaplar"/>
+                        <PropertyValue Property="TypeNamePlural" String="Değerlenecek Hesaplar Bakım Ekranı"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Değerlenecek Hesaplar"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Statu"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Source"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CorrectHkontBs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CorrectHkontPl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Statu"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Source"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CorrectHkontBs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CorrectHkontPl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Hkont</PropertyPath>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Rldnr</PropertyPath>
+                        <PropertyPath>Blart</PropertyPath>
+                        <PropertyPath>AccPrinciple</PropertyPath>
+                        <PropertyPath>Statu</PropertyPath>
+                        <PropertyPath>Source</PropertyPath>
+                        <PropertyPath>CorrectHkontBs</PropertyPath>
+                        <PropertyPath>CorrectHkontPl</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.BakiyeDevirBakimType/Waers">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.BakiyeDevirBakimType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.BakiyeDevirBakimType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.BakiyeDevirBakimType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Bakiye Devir Giriş Ekkranı"/>
+                            <PropertyValue Property="ID" String="BakiyeEntry"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Bakiye Devir Tablosu"/>
+                        <PropertyValue Property="TypeNamePlural" String="Bakiye Devir Tablosu"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Bakiye Devir"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Yıl"/>
+                            <PropertyValue Property="Value" Path="Gjahr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Dönem"/>
+                            <PropertyValue Property="Value" Path="Monat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana Hesap Numarası"/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Tutar"/>
+                            <PropertyValue Property="Value" Path="Dmbtr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Para Birimi"/>
+                            <PropertyValue Property="Value" Path="Waers"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Yıl"/>
+                            <PropertyValue Property="Value" Path="Gjahr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Dönem"/>
+                            <PropertyValue Property="Value" Path="Monat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana Hesap Numarası"/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Tutar"/>
+                            <PropertyValue Property="Value" Path="Dmbtr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Para Birimi"/>
+                            <PropertyValue Property="Value" Path="Waers"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Gjahr</PropertyPath>
+                        <PropertyPath>Monat</PropertyPath>
+                        <PropertyPath>Hkont</PropertyPath>
+                        <PropertyPath>Dmbtr</PropertyPath>
+                        <PropertyPath>Waers</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.HesapBelirlemeType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.HesapBelirlemeType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.HesapBelirlemeType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Hesap Belirleme Giriş Ekranı"/>
+                            <PropertyValue Property="ID" String="HesapBelirleme"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Hesap Belirleme Bakım Tablosu"/>
+                        <PropertyValue Property="TypeNamePlural" String="Hesap Belirleme Bakım Tablosu"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Hesap Belirleme Bakım Tablosu"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana hesap numarası"/>
+                            <PropertyValue Property="Value" Path="StockHkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Defter"/>
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hesap Tipi"/>
+                            <PropertyValue Property="Value" Path="AccType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hesap Tipi Tanımı"/>
+                            <PropertyValue Property="Value" Path="AccTypeText"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Belge Türü"/>
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="İndirim Hesabı"/>
+                            <PropertyValue Property="Value" Path="DiscountHkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="İndirim Oranı"/>
+                            <PropertyValue Property="Value" Path="DiscountRate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ortalama İndeks"/>
+                            <PropertyValue Property="Value" Path="AvrIndexRate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı Bilanço"/>
+                            <PropertyValue Property="Value" Path="CorrectHkontBs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı P&amp;L"/>
+                            <PropertyValue Property="Value" Path="CorrectHkontPl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana hesap numarası"/>
+                            <PropertyValue Property="Value" Path="StockHkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Defter"/>
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hesap Tipi"/>
+                            <PropertyValue Property="Value" Path="AccType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hesap Tipi Tanımı"/>
+                            <PropertyValue Property="Value" Path="AccTypeText"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Belge Türü"/>
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="İndirim Hesabı"/>
+                            <PropertyValue Property="Value" Path="DiscountHkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="İndirim Oranı"/>
+                            <PropertyValue Property="Value" Path="DiscountRate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ortalama İndeks"/>
+                            <PropertyValue Property="Value" Path="AvrIndexRate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı Bilanço"/>
+                            <PropertyValue Property="Value" Path="CorrectHkontBs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı P&amp;L"/>
+                            <PropertyValue Property="Value" Path="CorrectHkontPl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>StockHkont</PropertyPath>
+                        <PropertyPath>Rldnr</PropertyPath>
+                        <PropertyPath>AccType</PropertyPath>
+                        <PropertyPath>AccTypeText</PropertyPath>
+                        <PropertyPath>Blart</PropertyPath>
+                        <PropertyPath>AccPrinciple</PropertyPath>
+                        <PropertyPath>DiscountHkont</PropertyPath>
+                        <PropertyPath>DiscountRate</PropertyPath>
+                        <PropertyPath>AvrIndexRate</PropertyPath>
+                        <PropertyPath>CorrectHkontBs</PropertyPath>
+                        <PropertyPath>CorrectHkontPl</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.MaliyetHesaplariType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.MaliyetHesaplariType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.MaliyetHesaplariType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Maliyet Hesaplama Giriş Ekranı"/>
+                            <PropertyValue Property="ID" String="MaliyetHesaplama"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Maliyet Hesaplama Bakım Tabllosu"/>
+                        <PropertyValue Property="TypeNamePlural" String="Maliyet Hesaplama Bakım Tabllosu"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Maliyet Hesaplama Bakım Tabllosu"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana hesap numarası"/>
+                            <PropertyValue Property="Value" Path="CostHkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Defter"/>
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana hesap numarası"/>
+                            <PropertyValue Property="Value" Path="CostHkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Defter"/>
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>CostHkont</PropertyPath>
+                        <PropertyPath>Rldnr</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.OranTurleriType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.OranTurleriType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.OranTurleriType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Oran Türleri Bakım Ekranı"/>
+                            <PropertyValue Property="ID" String="OranTurleri"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Oran Türleri Bakım Ekranı"/>
+                        <PropertyValue Property="TypeNamePlural" String="Oran Türleri Bakım Ekranı"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Oran Türleri Bakım Ekranı"/>
+                                <PropertyValue Property="Value" Path="RateType"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Oran Türü"/>
+                            <PropertyValue Property="Value" Path="RateType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Oran Tanımı"/>
+                            <PropertyValue Property="Value" Path="RateDesc"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Oran Türü"/>
+                            <PropertyValue Property="Value" Path="RateType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Oran Tanımı"/>
+                            <PropertyValue Property="Value" Path="RateDesc"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>RateType</PropertyPath>
+                        <PropertyPath>RateDesc</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.SmmHesaplarType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.SmmHesaplarType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.SmmHesaplarType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="SMM Hesaplar Bakım Ekranı"/>
+                            <PropertyValue Property="ID" String="SmmHesaplar"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="SMM Hesaplar Bakım Ekranı"/>
+                        <PropertyValue Property="TypeNamePlural" String="SMM Hesaplar Bakım Ekranı"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="SMM Hesaplar Bakım Ekranı"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Defter"/>
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="SMM Hesap Türü"/>
+                            <PropertyValue Property="Value" Path="Stype"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana Hesap Numarası"/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Belge Türü"/>
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı Bilanço"/>
+                            <PropertyValue Property="Value" Path="CorrectHkontBs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı P&amp;L"/>
+                            <PropertyValue Property="Value" Path="CorrectHkontPl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Defter"/>
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="SMM Hesap Türü"/>
+                            <PropertyValue Property="Value" Path="Stype"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana Hesap Numarası"/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Belge Türü"/>
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı Bilanço"/>
+                            <PropertyValue Property="Value" Path="CorrectHkontBs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı P&amp;L"/>
+                            <PropertyValue Property="Value" Path="CorrectHkontPl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Rldnr</PropertyPath>
+                        <PropertyPath>Stype</PropertyPath>
+                        <PropertyPath>Hkont</PropertyPath>
+                        <PropertyPath>Blart</PropertyPath>
+                        <PropertyPath>AccPrinciple</PropertyPath>
+                        <PropertyPath>CorrectHkontBs</PropertyPath>
+                        <PropertyPath>CorrectHkontPl</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.StokDevirHiziType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.StokDevirHiziType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.StokDevirHiziType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Stok Devir Hızı"/>
+                            <PropertyValue Property="ID" String="Bukrs"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Stok Devir Hızı"/>
+                        <PropertyValue Property="TypeNamePlural" String="Stok Devir Hızı"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Stok Devir Hızı"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Rapor Dönemi"/>
+                            <PropertyValue Property="Value" Path="Rspmon"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hesap Tipi"/>
+                            <PropertyValue Property="Value" Path="AccType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Karşılaştırma Dönemi"/>
+                            <PropertyValue Property="Value" Path="Cspmon"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Para Birimi"/>
+                            <PropertyValue Property="Value" Path="Waers"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Stok Tutarı"/>
+                            <PropertyValue Property="Value" Path="StockBalance"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Maliyet Tutarı"/>
+                            <PropertyValue Property="Value" Path="CostBalance"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Stok Devir Hızı"/>
+                            <PropertyValue Property="Value" Path="StockTransSpeed"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Stok Devir Hızı gün"/>
+                            <PropertyValue Property="Value" Path="StockTransSpeedD"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Stok Devir Hızı Ay"/>
+                            <PropertyValue Property="Value" Path="StockTransSpeedM"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Rapor Dönemi"/>
+                            <PropertyValue Property="Value" Path="Rspmon"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hesap Tipi"/>
+                            <PropertyValue Property="Value" Path="AccType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Karşılaştırma Dönemi"/>
+                            <PropertyValue Property="Value" Path="Cspmon"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Para Birimi"/>
+                            <PropertyValue Property="Value" Path="Waers"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Stok Tutarı"/>
+                            <PropertyValue Property="Value" Path="StockBalance"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Maliyet Tutarı"/>
+                            <PropertyValue Property="Value" Path="CostBalance"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Stok Devir Hızı"/>
+                            <PropertyValue Property="Value" Path="StockTransSpeed"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Stok Devir Hızı gün"/>
+                            <PropertyValue Property="Value" Path="StockTransSpeedD"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Stok Devir Hızı Ay"/>
+                            <PropertyValue Property="Value" Path="StockTransSpeedM"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Rspmon</PropertyPath>
+                        <PropertyPath>AccType</PropertyPath>
+                        <PropertyPath>Cspmon</PropertyPath>
+                        <PropertyPath>Waers</PropertyPath>
+                        <PropertyPath>StockBalance</PropertyPath>
+                        <PropertyPath>CostBalance</PropertyPath>
+                        <PropertyPath>StockTransSpeed</PropertyPath>
+                        <PropertyPath>StockTransSpeedD</PropertyPath>
+                        <PropertyPath>StockTransSpeedM</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DonemsellestirmeType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DonemsellestirmeType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DonemsellestirmeType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Dönemselleştirme Giriş Ekranı"/>
+                            <PropertyValue Property="ID" String="Bukrs"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Dönemselleştirme Bakım Ekranı"/>
+                        <PropertyValue Property="TypeNamePlural" String="Dönemselleştirme Bakım Ekranı"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Stok Devir Hızı"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Defter"/>
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana Hesap Numarası"/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana Hesap Numarası"/>
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı Bilanço"/>
+                            <PropertyValue Property="Value" Path="ZdhbBil"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı P&amp;L"/>
+                            <PropertyValue Property="Value" Path="Zdhb_pl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Defter"/>
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana Hesap Numarası"/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ana Hesap Numarası"/>
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı Bilanço"/>
+                            <PropertyValue Property="Value" Path="ZdhbBil"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Düzeltme Hesabı P&amp;L"/>
+                            <PropertyValue Property="Value" Path="Zdhb_pl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Rldnr</PropertyPath>
+                        <PropertyPath>Hkont</PropertyPath>
+                        <PropertyPath>Blart</PropertyPath>
+                        <PropertyPath>AccPrinciple</PropertyPath>
+                        <PropertyPath>ZdhbBil</PropertyPath>
+                        <PropertyPath>Zdhb_pl</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.BapiCustomizingType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.BapiCustomizingType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.BapiCustomizingType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="BAPI Customizing Bakım Ekranı"/>
+                            <PropertyValue Property="ID" String="Bukrs"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="BAPI Customizing Bakım Ekranı"/>
+                        <PropertyValue Property="TypeNamePlural" String="BAPI Customizing Bakım Ekranı"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Stok Devir Hızı"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Gerçek değerleme alanı"/>
+                            <PropertyValue Property="Value" Path="Afabe"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Belge türü"/>
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Asset Type Geçmiş"/>
+                            <PropertyValue Property="Value" Path="AssetTrtypG"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Asset Type Yıl içi"/>
+                            <PropertyValue Property="Value" Path="AssetTrtypY"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hedef defter grubu"/>
+                            <PropertyValue Property="Value" Path="LedgerGroup"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Gerçek değerleme alanı"/>
+                            <PropertyValue Property="Value" Path="Afabe"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Belge türü"/>
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Asset Type Geçmiş"/>
+                            <PropertyValue Property="Value" Path="AssetTrtypG"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Asset Type Yıl içi"/>
+                            <PropertyValue Property="Value" Path="AssetTrtypY"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hedef defter grubu"/>
+                            <PropertyValue Property="Value" Path="LedgerGroup"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Afabe</PropertyPath>
+                        <PropertyPath>AssetTrtypG</PropertyPath>
+                        <PropertyPath>Blart</PropertyPath>
+                        <PropertyPath>AssetTrtypY</PropertyPath>
+                        <PropertyPath>LedgerGroup</PropertyPath>
+                        <PropertyPath>AccPrinciple</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DuranVarlikSatisTurleriType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DuranVarlikSatisTurleriType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DuranVarlikSatisTurleriType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Duran Varlık Satış Türleri"/>
+                            <PropertyValue Property="ID" String="Bukrs"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Duran Varlık Satış Türleri"/>
+                        <PropertyValue Property="TypeNamePlural" String="Duran Varlık Satış Türleri"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Duran Varlık Satış Türleri"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran varlık işlem türü"/>
+                            <PropertyValue Property="Value" Path="Bwasl"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Gerçek değerleme alanı"/>
+                            <PropertyValue Property="Value" Path="Afabe"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hesap 1"/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hesap 2"/>
+                            <PropertyValue Property="Value" Path="Hkont2"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Belge Türü"/>
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran varlık işlem türü"/>
+                            <PropertyValue Property="Value" Path="Bwasl"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Gerçek değerleme alanı"/>
+                            <PropertyValue Property="Value" Path="Afabe"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hesap 1"/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Hesap 2"/>
+                            <PropertyValue Property="Value" Path="Hkont2"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Belge Türü"/>
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Bwasl</PropertyPath>
+                        <PropertyPath>Afabe</PropertyPath>
+                        <PropertyPath>Hkont</PropertyPath>
+                        <PropertyPath>Hkont2</PropertyPath>
+                        <PropertyPath>Blart</PropertyPath>
+                        <PropertyPath>AccPrinciple</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DegerlemeyeTabiOlmayanDvType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DegerlemeyeTabiOlmayanDvType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DegerlemeyeTabiOlmayanDvType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Değerleme Tabi Olmayan DV Bakım Ekranı"/>
+                            <PropertyValue Property="ID" String="Bukrs"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Değerleme Tabi Olmayan DV"/>
+                        <PropertyValue Property="TypeNamePlural" String="Değerleme Tabi Olmayan DV"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Değerleme Tabi Olmayan DV"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran Varlık Sınıfı"/>
+                            <PropertyValue Property="Value" Path="Anlkl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran Varlık Sınıfı"/>
+                            <PropertyValue Property="Value" Path="Anlkl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Anlkl</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DepreciationAreaMappingType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DepreciationAreaMappingType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DepreciationAreaMappingType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Account Principle - Depreciation Area Map."/>
+                            <PropertyValue Property="ID" String="Bukrs"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Account Principle - Depreciation Area Map."/>
+                        <PropertyValue Property="TypeNamePlural" String="Değerleme Tabi Olmayan DV"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Account Principle - Depreciation Area Map."/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Gerçek değerleme alanı"/>
+                            <PropertyValue Property="Value" Path="Afabe"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şirket Kodu"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Gerçek değerleme alanı"/>
+                            <PropertyValue Property="Value" Path="Afabe"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>AccPrinciple</PropertyPath>
+                        <PropertyPath>Afabe</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.IstisnaDvType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.IstisnaDvType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.IstisnaDvType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="İstisna DV"/>
+                            <PropertyValue Property="ID" String="Bukrs"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="İstisna DV"/>
+                        <PropertyValue Property="TypeNamePlural" String="İstisna DV"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="İstisna DV"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="İstisna DV"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran varlık ana numarası"/>
+                            <PropertyValue Property="Value" Path="Anln1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran varlık alt numarası"/>
+                            <PropertyValue Property="Value" Path="Anln2"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="İstisna DV"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran varlık ana numarası"/>
+                            <PropertyValue Property="Value" Path="Anln1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran varlık alt numarası"/>
+                            <PropertyValue Property="Value" Path="Anln2"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>AccPrinciple</PropertyPath>
+                        <PropertyPath>Anln1</PropertyPath>
+                        <PropertyPath>Anln2</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ManuelEntryForCoefficentType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="İstisna DV"/>
+                            <PropertyValue Property="ID" String="Bukrs"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="İstisna DV"/>
+                        <PropertyValue Property="TypeNamePlural" String="İstisna DV"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="İstisna DV"/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="İstisna DV"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran varlık ana numarası"/>
+                            <PropertyValue Property="Value" Path="Anln1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran varlık alt numarası"/>
+                            <PropertyValue Property="Value" Path="Anln2"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Katsayı"/>
+                            <PropertyValue Property="Value" Path="Katsayi"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="İstisna DV"/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Muhasebe ilkeleri"/>
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran varlık ana numarası"/>
+                            <PropertyValue Property="Value" Path="Anln1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Duran varlık alt numarası"/>
+                            <PropertyValue Property="Value" Path="Anln2"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Katsayı"/>
+                            <PropertyValue Property="Value" Path="Katsayi"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>AccPrinciple</PropertyPath>
+                        <PropertyPath>Anln1</PropertyPath>
+                        <PropertyPath>Anln2</PropertyPath>
+                        <PropertyPath>Katsayi</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.BakiyeGecisTablosuType/Waers">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.BakiyeGecisTablosuType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.BakiyeGecisTablosuType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.BakiyeGecisTablosuType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="ID" String="Hkont"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String=""/>
+                        <PropertyValue Property="TypeNamePlural" String=""/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String=""/>
+                                <PropertyValue Property="Value" Path="Hkont"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="EndexDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="BalanceAmount"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Waers"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="EndexDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="BalanceAmount"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Waers"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>EndexDate</PropertyPath>
+                        <PropertyPath>Hkont</PropertyPath>
+                        <PropertyPath>BalanceAmount</PropertyPath>
+                        <PropertyPath>Waers</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.TersCalisanHesaplarType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.TersCalisanHesaplarType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.TersCalisanHesaplarType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="ID" String="HesapEntry"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String=""/>
+                        <PropertyValue Property="TypeNamePlural" String=""/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String=""/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Statu"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Source"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CorrectHkontBs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CorrectHkontPl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Blart"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AccPrinciple"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Statu"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Source"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CorrectHkontBs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CorrectHkontPl"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Hkont</PropertyPath>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Rldnr</PropertyPath>
+                        <PropertyPath>Blart</PropertyPath>
+                        <PropertyPath>AccPrinciple</PropertyPath>
+                        <PropertyPath>Statu</PropertyPath>
+                        <PropertyPath>Source</PropertyPath>
+                        <PropertyPath>CorrectHkontBs</PropertyPath>
+                        <PropertyPath>CorrectHkontPl</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.TersBakiyeTablosuType/Waers">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.TersBakiyeTablosuType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.TersBakiyeTablosuType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.TersBakiyeTablosuType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="ID" String="HesapEntry"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String=""/>
+                        <PropertyValue Property="TypeNamePlural" String=""/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Hkont"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Uuid"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="EndexDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Budat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Dmbtr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Waers"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Uuid"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Hkont"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="EndexDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Budat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Dmbtr"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Uuid</PropertyPath>
+                        <PropertyPath>Hkont</PropertyPath>
+                        <PropertyPath>EndexDate</PropertyPath>
+                        <PropertyPath>Budat</PropertyPath>
+                        <PropertyPath>Dmbtr</PropertyPath>
+                        <PropertyPath>Waers</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DuranVarlikBakimType/Uuid">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DuranVarlikBakimType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DuranVarlikBakimType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.DuranVarlikBakimType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="ID" String="Bukrs"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String=""/>
+                        <PropertyValue Property="TypeNamePlural" String=""/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String=""/>
+                                <PropertyValue Property="Value" Path="Bukrs"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Bktxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Anln1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Anln2"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="DepreciationArea"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Bldat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Budat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Rfdat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Shkzg"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="PurchaseYear"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="RevalAmount"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="DepreAmount"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Waers"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Zuonr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Sgtxt"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Anln1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Rldnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Anln2"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="DepreciationArea"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Bldat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Budat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Rfdat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Bktxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Shkzg"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="PurchaseYear"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="RevalAmount"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="DepreAmount"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Zuonr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Value" Path="Sgtxt"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Anln1</PropertyPath>
+                        <PropertyPath>Rldnr</PropertyPath>
+                        <PropertyPath>Anln2</PropertyPath>
+                        <PropertyPath>DepreciationArea</PropertyPath>
+                        <PropertyPath>Bldat</PropertyPath>
+                        <PropertyPath>Budat</PropertyPath>
+                        <PropertyPath>Rfdat</PropertyPath>
+                        <PropertyPath>Shkzg</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.WebServiceUsersType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.WebServiceUsersType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.WebServiceUsersType/Password">
+                <Annotation Term="Common.Masked"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.WebServiceUsersType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Web Servis Kullanıcı Bilgileri"/>
+                            <PropertyValue Property="ID" String="Username"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Username"/>
+                        <PropertyValue Property="TypeNamePlural" String="Adı"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Web Servis Kullanıcı Bilgileri"/>
+                                <PropertyValue Property="Value" Path="Username"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Service ID"/>
+                            <PropertyValue Property="Value" Path="ServiceId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Service URL"/>
+                            <PropertyValue Property="Value" Path="ServiceUrl"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Kullanıcı Adı"/>
+                            <PropertyValue Property="Value" Path="Username"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Şifre"/>
+                            <PropertyValue Property="Value" Path="Password"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Service ID"/>
+                            <PropertyValue Property="Value" Path="ServiceId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Service URL"/>
+                            <PropertyValue Property="Value" Path="ServiceUrl"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Kullanıcı Adı"/>
+                            <PropertyValue Property="Value" Path="Username"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>ServiceId</PropertyPath>
+                        <PropertyPath>ServiceUrl</PropertyPath>
+                        <PropertyPath>Username</PropertyPath>
+                        <PropertyPath>Password</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_ACCTYPEType/domain_name">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_ACCTYPEType/value_position">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_ACCTYPEType/language">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_SOURCEType/domain_name">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_SOURCEType/value_position">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_SOURCEType/language">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_STATUSType/domain_name">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_STATUSType/value_position">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_STATUSType/language">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_STYPEType/domain_name">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_STYPEType/value_position">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zinflation_services_expose.ZINF_DDL_I_STYPEType/language">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="_Entities"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

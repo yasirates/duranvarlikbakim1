@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: duranvarlikbakim1
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: Demo_NTTDATA
+          url: https://my404693-api.s4hana.cloud.sap
+        app:
+          name: ZDURANVARLIKBAK
+          description: Duran Varlık Bakım
+          package: ZINFLATION0
+          transport: XI1K900134
+        exclude:
+          - /test/
