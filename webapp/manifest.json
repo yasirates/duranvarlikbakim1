@@ -175,7 +175,9 @@
                             }
                         },
                         "tableSettings": {
-                            "type": "ResponsiveTable"
+                            "type": "ResponsiveTable",
+                            "multiSelect": true,
+                            "selectAll": true
                         }
                     }
                 },

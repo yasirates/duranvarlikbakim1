@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:upload="sap.m.upload" >
-	<Dialog id="uploadDialogSet" title="Excel Upload">
+	<Dialog id="uploadDialogSetDV" title="Excel Upload">
         <content>
-            <upload:UploadSet uploadEnabled="true" visible="false" id="uploadSet" items="{path: '/', templateShareable: false}" fileTypes="xlsx, xls" maxFileNameLength="200" beforeUploadStarts="onBeforeUploadStart" uploadCompleted="onUploadSetComplete" afterItemRemoved="onItemRemoved"
+            <upload:UploadSet uploadEnabled="true" visible="false" id="uploadSetDV" items="{path: '/', templateShareable: false}" fileTypes="xlsx, xls" maxFileNameLength="200" beforeUploadStarts="onBeforeUploadStart" uploadCompleted="onUploadSetComplete" afterItemRemoved="onItemRemoved"
             terminationEnabled="true">
                 <upload:UploadSetItem visibleRemove="true" visibleEdit="false" fileName="{name}" url="/upload">
                     <upload:attributes>
@@ -11,7 +11,7 @@
             </upload:UploadSet>
             <HBox class="sapUiResponsiveMargin" alignContent="Center" alignItems="Center">
                 <Label text="Seçiniz " required="true" class="sapUiTinyMarginEnd"  />
-                <u:FileUploader id="fUpload" tooltip="" change="onFUploadValueChange" typeMissmatch="onFUploadTypeMissmatch" style="Emphasized"
+                <u:FileUploader id="fUploadDV" tooltip="" change="onFUploadValueChange" typeMissmatch="onFUploadTypeMissmatch" style="Emphasized"
                     fileType="xls,xlsx" placeholder="{i18n>fileSelect}" />
             </HBox>
         </content>

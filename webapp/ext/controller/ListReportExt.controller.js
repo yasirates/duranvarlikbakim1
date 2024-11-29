@@ -1,15 +1,16 @@
-sap.ui.define(["sap/ui/core/Fragment", "sap/m/MessageToast","xlsx"],
-    function (Fragment, MessageToast,XLSX) {
+sap.ui.define(["sap/ui/core/Fragment", "sap/m/MessageToast", "xlsx"],
+    function (Fragment, MessageToast, XLSX) {
         'use strict';
         var oExcelValueArray = [];
         return {
             excelSheetsData: [],
             pDialog: null,
             openExcelDialog: function (oEvent) {
-                
+
                 //console.log(XLSX.version)
                 this.excelSheetsData = [];
 
+                /*
                 var oView = this.getView();
                 if (!this.pDialog) {
                     Fragment.load({
@@ -18,21 +19,30 @@ sap.ui.define(["sap/ui/core/Fragment", "sap/m/MessageToast","xlsx"],
                         type: "XML",
                         controller: this 
                     }).then((oDialog) => {
-                        var oFileUploader = Fragment.byId("excel_upload", "uploadSet");
+                        var oFileUploader = Fragment.byId("excel_upload", "uploadSetDV");
                         oFileUploader.removeAllItems();
                         this.pDialog = oDialog;
                         this.pDialog.open();                         
                     })
                         .catch(error => alert(error.message));
                 } else {
-                    var oFileUploader = Fragment.byId("excel_upload", "uploadSet");
+                    var oFileUploader = Fragment.byId("excel_upload", "uploadSetDV");
                     oFileUploader.removeAllItems();
                     this.pDialog.open();
                 }
+                    */
 
-                var fUpload =  Fragment.byId("excel_upload", "fUpload");
-                if (fUpload){
-                    fUpload.setValue("");
+                var that = this;
+                if (!that.pDialog) {
+                    that.pDialog = sap.ui.xmlfragment("duranvarlikbakim1.ext.fragment.ExcelUpload", this);
+                    that.getView().addDependent(that.pDialog);
+                }
+                this.pDialog.open();
+
+
+                var oInput = sap.ui.getCore().byId("fUploadDV");
+                if (oInput) {
+                    oInput.setValue("");
                 }
             },
             onUploadSet: function (oEvent) {
@@ -40,27 +50,30 @@ sap.ui.define(["sap/ui/core/Fragment", "sap/m/MessageToast","xlsx"],
                 //    MessageToast.show("Dosya seçimi yapınız!");
                 //    return;
                 //}
-                if (!oExcelValueArray.length) {
+                var oInput = sap.ui.getCore().byId("fUploadDV");
+                var oInputPath = oInput.getValue();
+
+                if (!oExcelValueArray.length || oInputPath === "") {
                     MessageToast.show("Dosya seçimi yapınız!");
+                } else {
+                    var that = this;
+                    var oSource = oEvent.getSource();
+
+                    // creating a promise as the extension api accepts odata call in form of promise only
+                    var fnAddMessage = function () {
+                        return new Promise((fnResolve, fnReject) => {
+                            that.callOdata(fnResolve, fnReject);
+                        });
+                    };
+
+                    var mParameters = {
+                        sActionLabel: oSource.getText() // or "Your custom text" 
+                    };
+                    // calling the oData service using extension api
+                    this.extensionAPI.securedExecution(fnAddMessage, mParameters);
+
+                    this.pDialog.close();
                 }
-
-                var that = this;
-                var oSource = oEvent.getSource();
-
-                // creating a promise as the extension api accepts odata call in form of promise only
-                var fnAddMessage = function () {
-                    return new Promise((fnResolve, fnReject) => {
-                        that.callOdata(fnResolve, fnReject);
-                    });
-                };
-
-                var mParameters = {
-                    sActionLabel: oSource.getText() // or "Your custom text" 
-                };
-                // calling the oData service using extension api
-                this.extensionAPI.securedExecution(fnAddMessage, mParameters);
-
-                this.pDialog.close();
             },
             onCloseDialog: function (oEvent) {
                 this.pDialog.close();
@@ -71,7 +84,7 @@ sap.ui.define(["sap/ui/core/Fragment", "sap/m/MessageToast","xlsx"],
             },
             onUploadSetComplete: function (oEvent) {
                 // getting the UploadSet Control reference
-                var oFileUploader = Fragment.byId("excel_Upload", "uploadSet");
+                var oFileUploader = Fragment.byId("excel_Upload", "uploadSetDV");
                 // since we will be uploading only 1 file so reading the first file object
                 var oFile = oFileUploader.getItems()[0].getFileObject();
 
@@ -105,7 +118,7 @@ sap.ui.define(["sap/ui/core/Fragment", "sap/m/MessageToast","xlsx"],
                 // get the property list of the entity for which we need to download the template
                 var oBuilding = oModel.getServiceMetadata().dataServices.schema[0].entityType.find(x => x.name === 'DuranVarlikBakimType');
                 // set the list of entity property, that has to be present in excel file template
-                var propertyList = ['Bukrs', 'Anln1', 'Anln2', 'Rldnr', 'DepreciationArea', 'Bldat', 'Budat', 'Rfdat', 'Bktxt', 'Shkzg', 'PurchaseYear', 'RevalAmount', 'DepreAmount', 'Zuonr', 'Sgtxt'];
+                var propertyList = ['Bukrs', 'Anln1', 'Anln2', 'Rldnr', 'DepreciationArea', 'Bldat', 'Budat', 'Rfdat', 'Bktxt', 'Shkzg', 'PurchaseYear', 'RevalAmount', 'DepreAmount', 'Waers', 'Zuonr', 'Sgtxt', 'ValuationDate', 'EndexDate'];
 
                 var excelColumnList = [];
                 var colList = {};
@@ -135,22 +148,29 @@ sap.ui.define(["sap/ui/core/Fragment", "sap/m/MessageToast","xlsx"],
 
                 // creating odata payload object for Building entity
                 var payload = {};
-     
+
                 //this.excelSheetsData[0].forEach((value, index) => {
-                    oExcelValueArray.forEach((value,index) => {
+                oExcelValueArray.forEach((value, index) => {
                     // setting the payload data
-                    if(index !== 0){
+                    if (index !== 0) {
                         var bldat = null;
                         var budat = null;
                         var rfdat = null;
-                        
+                        var valuation_date = null;
+                        var index_date = null;
+
                         bldat = value["F_Value"];
                         budat = value["G_Value"];
                         rfdat = value["H_Value"];
-                        
-                        bldat = bldat.substr(6, 4) + "-" + bldat.substr(3, 2) + "-" + bldat.substr(0, 2) +"T00:00:00"  ;
-                        budat = budat.substr(6, 4) + "-" + budat.substr(3, 2) + "-" + budat.substr(0, 2) +"T00:00:00"  ;
-                        rfdat = rfdat.substr(6, 4) + "-" + rfdat.substr(3, 2) + "-" + rfdat.substr(0, 2) +"T00:00:00"  ;
+                        valuation_date = value["Q_Value"];
+                        index_date = value["R_Value"];
+
+
+                        bldat = bldat.substr(6, 4) + "-" + bldat.substr(3, 2) + "-" + bldat.substr(0, 2) + "T00:00:00";
+                        budat = budat.substr(6, 4) + "-" + budat.substr(3, 2) + "-" + budat.substr(0, 2) + "T00:00:00";
+                        rfdat = rfdat.substr(6, 4) + "-" + rfdat.substr(3, 2) + "-" + rfdat.substr(0, 2) + "T00:00:00";
+                        valuation_date = valuation_date.substr(6, 4) + "-" + valuation_date.substr(3, 2) + "-" + valuation_date.substr(0, 2) + "T00:00:00";
+                        index_date = index_date.substr(6, 4) + "-" + index_date.substr(3, 2) + "-" + index_date.substr(0, 2) + "T00:00:00";
 
                         payload = {
                             "Bukrs": value["A_Value"],                             //Şirket Kodu
@@ -166,26 +186,29 @@ sap.ui.define(["sap/ui/core/Fragment", "sap/m/MessageToast","xlsx"],
                             "PurchaseYear": value["K_Value"].toString(),           //Satınalma Yılı
                             "RevalAmount": value["L_Value"].toString(),            //Yeniden Değ.Tutarı
                             "DepreAmount": value["M_Value"].toString(),            //Amortisman Yn.Dğ.Tu
-                            "Zuonr": value["N_Value"].toString(),                  //Tayin
-                            "Sgtxt": value["O_Value"].toString()                   //Kalem Metni 
+                            "Waers": value["N_Value"].toString(),            //Para Birimi
+                            "Zuonr": value["O_Value"].toString(),                  //Tayin
+                            "Sgtxt": value["P_Value"].toString(),                  //Kalem Metni 
+                            "ValuationDate": valuation_date.toString(),           //Değerleme Tarihi
+                            "EndexDate": index_date.toString()                   //Endeks Tarihi  
                         };
-                        
-                    // calling the odata service
-                    oModel.create("/DuranVarlikBakim", payload, {
-                        success: (result) => {
-                            console.log(result);
-                            var oMessageManager = sap.ui.getCore().getMessageManager();
-                            var oMessage = new sap.ui.core.message.Message({
-                                //message: "Building Created with ID: " + result.Bukrs,
-                                message: "Tabloya kayıt edildi",
-                                persistent: true, // create message as transition message
-                                type: sap.ui.core.MessageType.Success
-                            });
-                            oMessageManager.addMessages(oMessage);
-                            fnResolve();
-                        },
-                        error: fnReject
-                    });
+
+                        // calling the odata service
+                        oModel.create("/DuranVarlikBakim", payload, {
+                            success: (result) => {
+                                console.log(result);
+                                var oMessageManager = sap.ui.getCore().getMessageManager();
+                                var oMessage = new sap.ui.core.message.Message({
+                                    //message: "Building Created with ID: " + result.Bukrs,
+                                    message: "Tabloya kayıt edildi",
+                                    persistent: true, // create message as transition message
+                                    type: sap.ui.core.MessageType.Success
+                                });
+                                oMessageManager.addMessages(oMessage);
+                                fnResolve();
+                            },
+                            error: fnReject
+                        });
                     };
                 });
             },
@@ -218,7 +241,7 @@ sap.ui.define(["sap/ui/core/Fragment", "sap/m/MessageToast","xlsx"],
             processData: function (raw) {
                 debugger;
                 //var oExcelValueArray = [];
-                oExcelValueArray = [];            
+                oExcelValueArray = [];
                 var oWorkBook = new ExcelJS.Workbook();
                 oWorkBook.xlsx.load(raw).then(function (data) {
                     var oWorksheet = oWorkBook.getWorksheet(oWorkBook.worksheets[0].Name)
@@ -248,7 +271,7 @@ sap.ui.define(["sap/ui/core/Fragment", "sap/m/MessageToast","xlsx"],
                         }
                         debugger;
                         oExcelValueArray.push(oExcelValueObject);
-                    
+
                     });
                     debugger;
                 });
